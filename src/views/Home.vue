@@ -4,6 +4,7 @@
     <button @click="handClick('push')">跳转parent</button>
     <button @click="handClick('replace')">跳转parent</button>
     <p>{{food}}</p>
+    <input type="text" @input="aaa" />
   </div>
 </template>
 
@@ -38,6 +39,9 @@ export default {
       } else if (type == "replace") {
         this.$router.replace("/parent");
       }
+    },
+    aaa() {
+      console.log("aaa");
     }
   }
 };

@@ -7,8 +7,8 @@ export default [{
             food: route.query.food
         }),
         beforeEnter: (to, from, next) => {
-            if (from.name == 'about') alert('from about')
-            else alert('not from about')
+            if (from.name == 'about') console.log('from about')
+            else console.log('not from about')
             next() //切记加next()，否则不会执行跳转
         }
     },
@@ -21,11 +21,11 @@ export default [{
     {
         path: '/about',
         name: 'about',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
         component: () =>
-            import ( /* webpackChunkName: "about" */ '@/views/About.vue')
+            import ( /* webpackChunkName: "about" */ '@/views/About.vue'),
+        meta: {
+            title: '关于'
+        }
     },
     {
         path: '/argu/:name',
