@@ -3,14 +3,15 @@
     <button @click="handClick('back')">上一页</button>
     <button @click="handClick('push')">跳转parent</button>
     <button @click="handClick('replace')">跳转parent</button>
+    <button @click="getInfo">请求数据</button>
     <p>{{food}}</p>
-    <input type="text" @input="aaa" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
+import { getUserInfo } from "@/api/user";
 
 export default {
   name: "Home",
@@ -40,8 +41,10 @@ export default {
         this.$router.replace("/parent");
       }
     },
-    aaa() {
-      console.log("aaa");
+    getInfo() {
+      getUserInfo({ userId: 21 }).then(res => {
+        console.log(res);
+      });
     }
   }
 };

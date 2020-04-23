@@ -28,6 +28,18 @@ export default [{
         }
     },
     {
+        path: '/store',
+        name: 'store',
+        component: () =>
+            import ('@/views/store.vue')
+    },
+    {
+        path: '/count-to',
+        name: 'count-to',
+        component: () =>
+            import ('@/views/count-to.vue')
+    },
+    {
         path: '/argu/:name',
         name: 'argu',
         component: () =>
