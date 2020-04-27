@@ -1,0 +1,23 @@
+<template>
+  <div>
+    <list :list="list" :style="{color: 'red'}">
+      <count-to slot-scope="count" :end-val="count.number"></count-to>
+    </list>
+  </div>
+</template>
+<script>
+import List from "_c/list";
+import CountTo from "_c/count-to";
+export default {
+  data() {
+    return {
+      list: [{ number: 100 }, { number: 45 }]
+    };
+  },
+  components: {
+    List,
+    CountTo
+  },
+  methods: {}
+};
+</script>

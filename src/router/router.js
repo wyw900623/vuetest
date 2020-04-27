@@ -66,5 +66,17 @@ export default [{
             tel: () =>
                 import ('@/views/tel.vue')
         }
+    },
+    {
+        path: '/render',
+        name: 'render',
+        component: () =>
+            import ('@/views/render.vue')
+    },
+    {
+        path: '/menu-page',
+        name: 'menu-page',
+        component: () =>
+            import ('@/views/menu-page.vue')
     }
 ]
